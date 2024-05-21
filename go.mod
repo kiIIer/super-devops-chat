@@ -4,6 +4,7 @@ go 1.22
 
 require (
 	github.com/spf13/viper v1.18.2
+	github.com/streadway/amqp v1.1.0
 	google.golang.org/grpc v1.64.0
 	google.golang.org/protobuf v1.34.1
 	gorm.io/driver/postgres v1.5.7
