@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package chat;
+
+option go_package = "super-devops-chat/proto;proto";
+
+service ChatService {
+  // Bidirectional stream for chat messages
+  rpc Chat(stream ChatMessage) returns (stream ChatMessage) {}
+
+  // Unary RPC to get all messages
+  rpc GetMessages(Empty) returns (MessageList) {}
+}
+
+message ChatMessage {
+  string user = 1;
+  string message = 2;
+  int64 timestamp = 3;
+}
+
+message Empty {}
+
+message MessageList {
+  repeated ChatMessage messages = 1;
+}
